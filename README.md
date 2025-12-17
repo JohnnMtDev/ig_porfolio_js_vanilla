@@ -8,14 +8,13 @@ Diseñado como proyecto de **portfolio frontend**, enfocado en experiencia de us
 ---
 
 ## ✨ Demo
-👉 Live demo: https://TU-USUARIO.github.io/instagram-gallery-clone/
-
+👉 Live demo: [(https://johnnmtdev.github.io/ig_porfolio_js_vanilla/)]
 ---
 
 ## 🖼️ Preview
 
-![Desktop Dark](assets/screenshots/desktop-dark.png)
-![Mobile](assets/screenshots/mobile.png)
+![Desktop Dark](assets/screenshots/dark.png)
+![Desktop Light](assets/screenshots/light.png)
 
 ---
 
@@ -84,3 +83,4 @@ Frontend Developer
 📧 email  
 💼 LinkedIn  
 🐙 GitHub
+
