@@ -88,15 +88,9 @@ No requiere instalación ni dependencias.
 - Animaciones avanzadas
 - Versión React del proyecto
 
----
 
-## 👨‍💻 Autor
-
-**Jonatan Mesías**  
-Frontend Developer  
-📧 email  
-💼 LinkedIn  
 🐙 GitHub
+
 
 
 
