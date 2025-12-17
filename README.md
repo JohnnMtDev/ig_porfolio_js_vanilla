@@ -14,7 +14,13 @@ Diseñado como proyecto de **portfolio frontend**, enfocado en experiencia de us
 ## 🖼️ Preview
 
 ![Desktop Dark](assets/dark.png)
+
 ![Desktop Light](assets/light.png)
+
+![Gallery](assets/gallery.png)
+
+![LikeBtn](assets/likebtn.png)
+
 
 ---
 
@@ -83,5 +89,6 @@ Frontend Developer
 📧 email  
 💼 LinkedIn  
 🐙 GitHub
+
 
 
