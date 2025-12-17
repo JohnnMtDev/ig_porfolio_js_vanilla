@@ -1,110 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Instagram Profile Clone</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Styles -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotografía - Jonatan Mesías</title>
     <link rel="stylesheet" href="styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
+    
+   
 </head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-section">
+                <div class="profile-img-container">
+                    <img src="./src/profile.png" alt="Jonatan Mesías" class="profile-img">
+                </div>
+                <h1>Jonatan Mesías</h1>
+                <p class="subtitle">📸 Photography enthusiast | 🌍 Travel lover | <br>✨ Capturing moments around the world</p>
+            </div>
+            
+            <div class="theme-toggle">
+                <span>Dark</span>
+                <label class="switch">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="slider"></span>
+                </label>
+                <span>Light</span>
+            </div>
+        </header>
 
-<body class="dark">
+        <main>
+            <div class="gallery" id="gallery-container">
+                <!-- Las imágenes se cargarán dinámicamente con JavaScript -->
+            </div>
+        </main>
 
-<div class="container mt-4">
-
-    <!-- DARK MODE SWITCH -->
-    <div class="d-flex justify-content-end mb-4">
-        <label class="switch">
-            <input id="themeSwitch" type="checkbox" checked>
-            <span class="slider"></span>
-        </label>
+        <footer>
+            <p>© 2025 Jonatan Mesías Photography. Todos los derechos reservados.</p>
+        </footer>
     </div>
 
-    <!-- PROFILE -->
-    <div class="row profile-header align-items-center">
-        <div id="profile-photo" class="col-4 col-md-3 text-center">
-            <img src="./src/profile.jpg" alt="Profile photo" class="profile-img">
-        </div>
-
-        <div id="profile-text" class="col-8 col-md-9">
-            <h2>Johnn BlueScreen</h2>
-            <p class="role">Frontend Developer · UI / UX Designer</p>
-            <p class="project">Instagram Profile Clone — UI & Interaction Demo</p>
-        </div>
-    </div>
-
-    <!-- GALLERY -->
-    <div id="gallery" class="row g-3">
-        <!-- ITEM -->
-        <div class="col-3 gallery-item">
-            <img data-index="0" src="https://picsum.photos/800?random=1" class="gallery-img">
-            <div class="like-box">❤️ 120</div>
-        </div>
-        <div class="col-3 gallery-item">
-            <img data-index="1" src="https://picsum.photos/800?random=2" class="gallery-img">
-            <div class="like-box">❤️ 89</div>
-        </div>
-        <div class="col-3 gallery-item">
-            <img data-index="2" src="https://picsum.photos/800?random=3" class="gallery-img">
-            <div class="like-box">❤️ 200</div>
-        </div>
-        <div class="col-3 gallery-item">
-            <img data-index="3" src="https://picsum.photos/800?random=4" class="gallery-img">
-            <div class="like-box">❤️ 56</div>
-        </div>
-
-        <div class="col-3 gallery-item">
-            <img data-index="4" src="https://picsum.photos/800?random=5" class="gallery-img">
-            <div class="like-box">❤️ 134</div>
-        </div>
-        <div class="col-3 gallery-item">
-            <img data-index="5" src="https://picsum.photos/800?random=6" class="gallery-img">
-            <div class="like-box">❤️ 98</div>
-        </div>
-        <div class="col-3 gallery-item">
-            <img data-index="6" src="https://picsum.photos/800?random=7" class="gallery-img">
-            <div class="like-box">❤️ 60</div>
-        </div>
-        <div class="col-3 gallery-item">
-            <img data-index="7" src="https://picsum.photos/800?random=8" class="gallery-img">
-            <div class="like-box">❤️ 210</div>
-        </div>
-
-         <div class="col-3 gallery-item">
-            <img data-index="4" src="https://picsum.photos/800?random=9" class="gallery-img">
-            <div class="like-box">❤️ 134</div>
-        </div>
-        <div class="col-3 gallery-item">
-            <img data-index="5" src="https://picsum.photos/800?random=10" class="gallery-img">
-            <div class="like-box">❤️ 98</div>
-        </div>
-        <div class="col-3 gallery-item">
-            <img data-index="6" src="https://picsum.photos/800?random=11" class="gallery-img">
-            <div class="like-box">❤️ 60</div>
-        </div>
-        <div class="col-3 gallery-item">
-            <img data-index="7" src="https://picsum.photos/800?random=12" class="gallery-img">
-            <div class="like-box">❤️ 210</div>
+    <!-- Modal para vista ampliada -->
+    <div class="modal" id="image-modal">
+        <button class="close-modal" id="close-modal">&times;</button>
+        <div class="modal-content">
+            <img class="modal-img" id="modal-image" src="" alt="Imagen ampliada">
+            <button class="nav-btn prev-btn" id="prev-btn">&#10094;</button>
+            <button class="nav-btn next-btn" id="next-btn">&#10095;</button>
+            <div class="photo-counter">
+                <span id="current-index">1</span> / <span id="total-images">4</span>
+            </div>
+            <div class="image-title" id="modal-image-title"></div>
         </div>
     </div>
-</div>
 
-<!-- MODAL / CAROUSEL -->
-<div id="imageModal" class="custom-modal hidden">
-    <button id="closeBtn" class="close-btn">✕</button>
-    <button id="prevBtn" class="nav-btn left">‹</button>
-
-    <div class="modal-content-wrapper">
-        <img id="modalImg" class="modal-img">
-    </div>
-
-    <button id="nextBtn" class="nav-btn right">›</button>
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
